@@ -16,7 +16,7 @@ fn bytes_to_string(bytes: &[u8]) -> String {
 }
 
 fn main() {
-    let the_bytes = "Bitcoin: A purely peer-to-peer \
+    let key = "Bitcoin: A purely peer-to-peer \
     version of electronic cash would allow online payments \
     to be sent directly from one party to another without \
     going through a financial institution."
@@ -41,7 +41,7 @@ fn main() {
 
     let xor_message: Vec<Vec<u8>> = bytes_messages
         .iter()
-        .map(|message| (xor_bytes(&the_bytes, message.as_slice())))
+        .map(|message| (xor_bytes(&key, message.as_slice())))
         .collect();
 
     xor_message
